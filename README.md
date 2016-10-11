@@ -128,3 +128,23 @@ gedit films.txt
 cd ../.. 
 cp -R -u multimedia/* multimedia_test/
 ```
+
+## Ejercicio10
+· *Delete the directory multimedia/pictures/others. The system must ask for confirmation.*
+
+-- Para borrar el directorio multimedia/pictures/other ejecutamos el siguiente comando.
+
+```console
+rmdir multimedia/pictures/other
+```
+
+-- Borrado con éxito, el sistema no preguntó confirmación.
+
+## Ejercicio11
+· *Move the file films.txt, which is in multimedia/video, to the directory above, at the same time renaming the file to my_films.txt.*
+
+-- Para mover el archivo "films.txt" del directorio multimedia/video al directorio superior, renombrándolo al mismo tiempo a "my_films.txt", ejecutamos la siguiente línea de comandos por consola.
+
+```console
+mv multimedia/video/films.txt multimedia/my_films.txt
+```
