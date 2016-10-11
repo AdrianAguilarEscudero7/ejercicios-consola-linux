@@ -13,7 +13,7 @@ ls Imágenes/*.jpg
 ## Ejercicio02
 · *Display all the files in the directory /usr/bin starting with letter “j”.*
 
--- Para mostrar todos los archivos que empiecen con la letra "j" en el directorio /usr/bin ejecutamos la siguiente línea de comandos por consola.
+-- Para mostrar todos los archivos que empiecen con la letra "j" en el directorio /usr/bin, ejecutamos la siguiente línea de comandos por consola.
 
 ```console
 ls /usr/bin/j*
@@ -70,7 +70,7 @@ cp test/gzip test/gzip2
 ## Ejercicio07
 · *Change the name of the directory test to test2. Create test3 at the same level in the directory tree as test2 and move all the files from test2 to test3. Delete test2.*
 
--- Para cambiar el nombre del directorio test/ a test2/ utilizamos el siguiente comando.
+-- Para cambiar el nombre del directorio test/, a test2/, utilizamos el siguiente comando.
 
 ```console
 mv test/ test2/
@@ -94,3 +94,37 @@ rmdir test2/
 
 -- Se puede crear, pero se crean 2 archivos por separado, además no es una buena idea nombrar de esta forma a los archivos, ya que "*" y "?", son ejemplos de comodines y se usan para relacionar caracteres con otras combinaciones de caracteres, ya sea de forma múltiple o individual. Su empleo más común es abarcar un número más amplio de archivos o directorios.
 
+
+## Ejercicio09
+· *Create a directory named multimedia_test and copy all the content from the directory multimedia into it. Then, create two files in multimedia/video/, one named films.txt and another named actors.txt. Edit the file films.txt and write the title of your favourite movie. Then, create another file in multimedia_test/video/, also named films.txt. Edit this file and now write the titles of your five favourite movies. Copy of all the content of multimedia into multimedia_test ensuring that only most recently modified versions of files remain.To check that everything is ok, check if multimedia_test/video contains the empty file actors.txt and the file films.txt contains 5 titles and not 1.*
+
+-- Para crear un directorio llamado multimedia_test/ y copiar todo el contenido desde el directorio multimedia/ dentro de él, ejecutamos los siguientes comandos.
+
+```console
+mkdir multimedia_test/
+cp -R multimedia/* multimedia_test/
+```
+
+-- Ahora creamos los dos archivos, "films.txt" y "actors.txt" en el directorio multimedia/video/, y editamos el archivo "films.txt" con gedit por ejemplo.
+
+```console
+cd multimedia/video/
+touch films.txt actors.txt
+gedit films.txt
+```
+
+-- A continuación creamos otro archivo en el directorio multimedia_test/video/, también llamado "films.txt" y lo editamos de manera diferente al otro.
+
+```console
+cd ../..
+cd multimedia_test/video/
+touch films.txt
+gedit films.txt
+```
+
+-- Finalmente copiamos todo el contenido del directorio multimedia/ dentro del directorio multimedia_test/, asegurándonos de que no se copien los archivos que estén más desactualizados que los de la ruta destino.
+
+```console
+cd ../.. 
+cp -R -u multimedia/* multimedia_test/
+```
